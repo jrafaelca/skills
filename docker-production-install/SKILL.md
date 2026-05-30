@@ -17,6 +17,12 @@ Ask only if missing:
 - users that need Docker access; default `ubuntu deploy`
 - Docker log limit; default `50m` and `1` file
 
+## SSH Key Resolution
+
+- If the user gives only a key name like `my-server.pem` or `id_ed25519`, assume `~/.ssh/<name>`.
+- If the user gives no key path, prefer `~/.ssh/id_ed25519`, then `~/.ssh/id_rsa`.
+- Do not invent a key path outside `~/.ssh` unless the user explicitly gives one.
+
 ## Rules
 
 - Prefer Ubuntu repo packages on Ubuntu 26.04 unless user asks for Docker upstream repo.

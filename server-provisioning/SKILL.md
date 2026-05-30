@@ -17,6 +17,12 @@ Ask only if missing:
 - deploy public key source: copy current `ubuntu` key, paste GitHub deploy public key, or path to local `.pub`
 - whether to enable UFW; default no if security groups already control access
 
+## SSH Key Resolution
+
+- If the user gives only a key name like `my-server.pem` or `id_ed25519`, assume `~/.ssh/<name>`.
+- If the user gives no key path, prefer `~/.ssh/id_ed25519`, then `~/.ssh/id_rsa`.
+- Do not invent a key path outside `~/.ssh` unless the user explicitly gives one.
+
 ## Safety Rules
 
 - Keep current admin user reachable.

@@ -18,6 +18,12 @@ Ask only if missing:
 - environment label; default `production`
 - host label; default `hostname`
 
+## SSH Key Resolution
+
+- If the user gives only a key name like `my-server.pem` or `id_ed25519`, assume `~/.ssh/<name>`.
+- If the user gives no key path, prefer `~/.ssh/id_ed25519`, then `~/.ssh/id_rsa`.
+- Do not invent a key path outside `~/.ssh` unless the user explicitly gives one.
+
 ## Layout
 
 ```text

@@ -2,6 +2,17 @@
 
 Collection of reusable Codex skills for server and deployment work.
 
+## Install
+
+Install this repo into Codex's skills path with:
+
+```bash
+make install
+```
+
+That copies the repo into `${CODEX_HOME:-$HOME/.codex}/skills`.
+It installs under `${CODEX_HOME:-$HOME/.codex}/skills/fyxtrack` to avoid overwriting other skills.
+
 ## Order
 
 Recommended run order for server work:
@@ -17,6 +28,8 @@ Recommended run order for server work:
 - Do not store IPs, usernames, PEM files, private keys, tokens, or passwords in the skills.
 - Ask for connection details at runtime.
 - Keep examples generic and redact real infrastructure values.
+- If a user gives only a key name, assume `~/.ssh/<name>`.
+- If no key path is given, prefer `~/.ssh/id_ed25519`, then `~/.ssh/id_rsa`.
 
 ## Skills
 

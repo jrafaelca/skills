@@ -22,6 +22,12 @@ Optional:
 - create user if missing; default no unless user asks
 - replace all keys; default no, append only
 
+## SSH Key Resolution
+
+- If the user gives only a key name like `my-server.pem` or `id_ed25519`, assume `~/.ssh/<name>`.
+- If the user gives no key path, prefer `~/.ssh/id_ed25519`, then `~/.ssh/id_rsa`.
+- Do not invent a key path outside `~/.ssh` unless the user explicitly gives one.
+
 ## Safety Rules
 
 - Never overwrite `authorized_keys` unless user explicitly asks to replace.
