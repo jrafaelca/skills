@@ -1,0 +1,4 @@
+interface:
+  display_name: "Server Provisioning"
+  short_description: "Bootstrap hardened Ubuntu servers for deploy automation."
+  default_prompt: "Provision an Ubuntu server for production deployments using our standard bootstrap checklist."

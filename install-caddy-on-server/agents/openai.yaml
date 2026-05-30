@@ -1,0 +1,4 @@
+interface:
+  display_name: "Install Caddy on a Server"
+  short_description: "Install and run Caddy per server"
+  default_prompt: "Use this skill when the user asks how to install Caddy on a server, route apps through local ports, or set up IP/path or subdomain reverse proxying with one Caddy per host."

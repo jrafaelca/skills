@@ -1,0 +1,4 @@
+interface:
+  display_name: "Install SSH Key"
+  short_description: "Install an SSH public key for a server user safely."
+  default_prompt: "Install this SSH public key for the target Linux user, preserving existing authorized_keys."

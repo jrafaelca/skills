@@ -1,0 +1,4 @@
+interface:
+  display_name: "Alloy Docker Logs"
+  short_description: "Install Alloy on Docker hosts and send logs to Loki."
+  default_prompt: "Install Alloy on an existing Docker server and send container logs to the Loki URL I provide."
