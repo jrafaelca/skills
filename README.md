@@ -18,10 +18,11 @@ It installs under `${CODEX_HOME:-$HOME/.codex}/skills/fyxtrack` to avoid overwri
 Recommended run order for server work:
 
 1. `server-provisioning`
-2. `docker-production-install`
-3. `install-ssh-authorized-key`
-4. `alloy-docker-logs`
-5. `install-caddy-on-server`
+2. `docker-installing`
+3. `ssh-key-installing`
+4. `jenkins-installing`
+5. `alloy-installing`
+6. `caddy-installing`
 
 ## Safety
 
@@ -34,7 +35,8 @@ Recommended run order for server work:
 ## Skills
 
 - [`server-provisioning`](./server-provisioning)
-- [`docker-production-install`](./docker-production-install)
-- [`install-ssh-authorized-key`](./install-ssh-authorized-key)
-- [`alloy-docker-logs`](./alloy-docker-logs)
-- [`install-caddy-on-server`](./install-caddy-on-server)
+- [`docker-installing`](./docker-installing)
+- [`ssh-key-installing`](./ssh-key-installing)
+- [`jenkins-installing`](./jenkins-installing)
+- [`alloy-installing`](./alloy-installing)
+- [`caddy-installing`](./caddy-installing)

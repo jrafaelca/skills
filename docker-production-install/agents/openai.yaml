@@ -1,4 +1,0 @@
-interface:
-  display_name: "Docker Production Install"
-  short_description: "Install and configure Docker for production hosts."
-  default_prompt: "Install Docker for production with Compose, deploy user access, and bounded container logs."

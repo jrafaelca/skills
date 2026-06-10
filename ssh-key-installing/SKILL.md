@@ -1,9 +1,9 @@
 ---
-name: install-ssh-authorized-key
-description: Install an SSH public key into a Linux user's authorized_keys safely and idempotently. Use when asked to add, install, append, replace, validate, or troubleshoot SSH keys for a server user such as ubuntu, deploy, github, or another Linux account.
+name: ssh-key-installing
+description: Install, append, replace, or validate SSH public keys in a Linux user's authorized_keys safely and idempotently.
 ---
 
-# Install SSH Authorized Key
+# SSH Key Installing
 
 Install SSH public keys without deleting existing access. Use for deploy keys, GitHub Actions SSH access, or giving a user login access.
 

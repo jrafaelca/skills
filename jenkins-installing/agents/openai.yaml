@@ -1,0 +1,4 @@
+interface:
+  display_name: "Jenkins Installing"
+  short_description: "Run a Jenkins controller on Docker with agents."
+  default_prompt: "Install or harden a Jenkins controller on Docker with a persistent volume, localhost-only forwarding, and SSH agent guidance."

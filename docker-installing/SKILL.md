@@ -1,9 +1,9 @@
 ---
-name: docker-production-install
-description: Install and configure Docker for production Ubuntu servers in our deployment pattern. Use when asked to install Docker, Docker Compose, add ubuntu/deploy to the docker group, configure Docker json-file log rotation, and validate Docker on a server used for container deployments.
+name: docker-installing
+description: Install Docker and Compose on Ubuntu production hosts, add ubuntu and automation to the docker group, set json-file log rotation, and validate container access.
 ---
 
-# Docker Production Install
+# Docker Installing
 
 Use after base server provisioning. This skill installs Docker only; it does not deploy app stacks or monitoring suites.
 
@@ -14,7 +14,7 @@ Ask only if missing:
 - SSH target, for example `ubuntu@1.2.3.4`
 - SSH user, for example `ubuntu`
 - SSH private key path, for example `~/.ssh/key.pem`
-- users that need Docker access; default `ubuntu deploy`
+- users that need Docker access; default `ubuntu automation`
 - Docker log limit; default `50m` and `1` file
 
 ## SSH Key Resolution
@@ -61,7 +61,7 @@ sudo systemctl enable --now docker
 sudo systemctl restart docker
 
 sudo usermod -aG docker ubuntu
-sudo usermod -aG docker deploy
+sudo usermod -aG docker automation
 ```
 
 ## Validate
@@ -71,7 +71,7 @@ docker version --format 'Docker {{.Server.Version}}'
 docker compose version
 cat /etc/docker/daemon.json
 id ubuntu
-id deploy
+id automation
 docker info --format '{{.LoggingDriver}}'
 ```
 

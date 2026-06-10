@@ -1,4 +1,0 @@
-interface:
-  display_name: "Ollama Compose"
-  short_description: "Production Ollama Compose for servers"
-  default_prompt: "Use $ollama-compose to create or harden a production-ready Docker Compose deployment for Ollama on a server, with the official image, manual model pulls, and reverse-proxy-first exposure."

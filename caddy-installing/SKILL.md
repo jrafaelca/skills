@@ -1,9 +1,9 @@
 ---
-name: install-caddy-on-server
-description: Install and configure one Caddy instance per server to expose local app ports through HTTP or HTTPS. Use when the user needs reverse proxy setup, IP/path routing, subdomain routing, or wants to keep Caddy out of app compose files.
+name: caddy-installing
+description: Install Caddy as the per-host reverse proxy for local upstreams, including subdomain routing and path routing.
 ---
 
-# Install Caddy on a Server
+# Caddy Installing
 
 Use this skill when setting up Caddy on a host that runs app containers locally. The goal is one Caddy per server, not one shared proxy for many projects.
 

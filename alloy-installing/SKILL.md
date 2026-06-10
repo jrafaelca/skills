@@ -1,9 +1,9 @@
 ---
-name: alloy-docker-logs
-description: Install Grafana Alloy on an existing Docker host and forward Docker container logs to Loki. Use when asked to add Alloy to an app server, collect Docker logs, point logs at a Loki URL, create /home/deploy/alloy/config.alloy and compose.yaml, or validate logs in Grafana/Loki.
+name: alloy-installing
+description: Install Alloy on Docker hosts to collect container logs and forward them to Loki.
 ---
 
-# Alloy Docker Logs
+# Alloy Installing
 
 Use on app servers that already run Docker. Do not install Grafana, Loki, Prometheus, or the monitoring stack here. Always ask for Loki push URL if missing.
 
@@ -27,14 +27,14 @@ Ask only if missing:
 ## Layout
 
 ```text
-/home/deploy/alloy/
+/home/automation/alloy/
 ├─ config.alloy
 └─ compose.yaml
 ```
 
 ## Config
 
-Create `/home/deploy/alloy/config.alloy`:
+Create `/home/automation/alloy/config.alloy`:
 
 ```hcl
 logging {
@@ -105,7 +105,7 @@ loki.write "default" {
 
 ## Compose
 
-Create `/home/deploy/alloy/compose.yaml`:
+Create `/home/automation/alloy/compose.yaml`:
 
 ```yaml
 services:
@@ -134,20 +134,20 @@ volumes:
 ```bash
 set -euo pipefail
 
-sudo install -d -o deploy -g deploy -m 0755 /home/deploy/alloy
+sudo install -d -o automation -g automation -m 0755 /home/automation/alloy
 # write config.alloy and compose.yaml
-sudo chown deploy:deploy /home/deploy/alloy/config.alloy /home/deploy/alloy/compose.yaml
-sudo chmod 0644 /home/deploy/alloy/config.alloy /home/deploy/alloy/compose.yaml
+sudo chown alloy:alloy /home/automation/alloy/config.alloy /home/automation/alloy/compose.yaml
+sudo chmod 0644 /home/automation/alloy/config.alloy /home/automation/alloy/compose.yaml
 
-sudo -u deploy sh -lc 'cd /home/deploy/alloy && docker compose pull && docker compose up -d --remove-orphans'
+sudo -u automation sh -lc 'cd /home/automation/alloy && docker compose pull && docker compose up -d --remove-orphans'
 ```
 
 ## Validate
 
 ```bash
-sudo -u deploy sh -lc 'cd /home/deploy/alloy && docker compose ps'
+sudo -u automation sh -lc 'cd /home/automation/alloy && docker compose ps'
 curl --max-time 5 -fsS http://127.0.0.1:12345/-/ready
-sudo -u deploy sh -lc 'cd /home/deploy/alloy && docker compose logs --tail=80 alloy'
+sudo -u automation sh -lc 'cd /home/automation/alloy && docker compose logs --tail=80 alloy'
 curl --max-time 5 -fsS <LOKI_READY_URL> || true
 ```
 
@@ -182,4 +182,4 @@ By event name when log line starts with `LEVEL event.name key=value`:
 - Alloy UI must stay bound to `127.0.0.1` unless user explicitly wants network access.
 - Docker socket is read-only.
 - `stage.drop older_than = "168h"` avoids sending stale Docker logs that Loki may reject.
-- Existing app deploy flow stays unchanged; Alloy auto-discovers containers.
+- Existing app deployment flow stays unchanged; Alloy auto-discovers containers.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Installing"
+  short_description: "Install Docker and log rotation on Ubuntu hosts."
+  default_prompt: "Provision Docker on Ubuntu with Compose, automation user access, and bounded container logs."
