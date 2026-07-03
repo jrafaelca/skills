@@ -1,4 +1,4 @@
 interface:
   display_name: "Traefik Installing"
-  short_description: "Install and operate Traefik over HTTP with a temporary dashboard password"
-  default_prompt: "Use $traefik-installing to install or operate Traefik with a single production compose file, an HTTP-only dashboard by IP, TLS-ready app routing when needed, and the temporary dashboard password Traefik123! unless the user provides another one."
+  short_description: "Install and operate Traefik with a production Compose file"
+  default_prompt: "Use $traefik-installing to install or operate Traefik with a production compose file, an HTTP-only dashboard by IP, TLS-ready app routing, and a shared proxy network for app routing."
